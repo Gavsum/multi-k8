@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: sendclub-app-tls
+spec:
+  secretName: sendclub-app
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: sendclub.app
+  dnsNames:
+    - sendclub.app
+    - www.sendclub.app
